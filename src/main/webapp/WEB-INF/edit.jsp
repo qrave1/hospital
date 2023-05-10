@@ -1829,109 +1829,109 @@ section {
   <!-- ========================================================  -->
 </head>
 
+
 <body style=" background-color:#f1f7fd;">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Medilab</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    <h1 class="logo me-auto"><a href="/">Здоровье++</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="#Departments">Departments</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
-          <li><a class="nav-link scrollto" href="/userAppo">Appoiments</a></li>
-          <c:choose>
-		    <c:when test="${sessionScope.user_id != null}">
-	          <li><a class="nav-link scrollto" href="/logout">LogOut</a></li>
-		        
-		    </c:when>
-		    <c:otherwise>
-	          <li><a class="nav-link scrollto" href="/index">LogIn</a></li>
-		    </c:otherwise>
-		</c:choose>
-          
-          <li></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="/">Главная</a></li>
+        <li><a class="nav-link scrollto" href="/userAppo">Записи</a></li>
+        <c:choose>
+          <c:when test="${sessionScope.user_id != null}">
+            <li><a class="nav-link scrollto" href="/logout">Выйти</a></li>
 
-      <a href="/index" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+          </c:when>
+          <c:otherwise>
+            <li><a class="nav-link scrollto" href="/index">Войти</a></li>
+          </c:otherwise>
+        </c:choose>
 
+        <li></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <a href="/index" class="appointment-btn scrollto"><span class="d-none d-md-inline">Записаться</span></a>
+
+  </div>
+
+</header><!-- End Header -->
+
+<div class="container " style="margin-top:150px; background-color:#f1f7fd;">
+  <div class="section-title">
+    <h2 class="text-center" style="font-size: 32px; font-weight: bold; margin-bottom: 20px; padding-bottom: 20px; position: relative; color: #2c4964;">Посмотрите свободные записи </h2>
+    <h3 style="color: #2c4964;">Доктор <c:out value="${appo.getDoctor().getName()}"/> </h3>
+  </div>
+
+  <c:out value="${success}"/>
+
+  <form:form action="/checkTime/${appo.getId()}/edit" method="put" modelAttribute="timee">
+    <div class="container text-center mt-5">
+      <div class="row">
+        <div class="col">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Запись</h5>
+
+              <input class="btn btn-primary" name="date" value="15-05-23 12:00" type="submit">
+            </div>
+          </div>
+
+          <div class="card text-center mt-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Запись</h5>
+              <input class="btn btn-primary" name="date" value="15-05-23 10:00" type="submit">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Запись</h5>
+              <input class="btn btn-primary" name="date" value="15-05-23 08:00" type="submit">
+            </div>
+          </div>
+
+          <div class="card text-center mt-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Запись</h5>
+              <input class="btn btn-primary" name="date" value="15-05-23 09:00" type="submit">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Запись</h5>
+              <input class="btn btn-primary" name="date" value="15-05-23 07:00" type="submit">
+            </div>
+          </div>
+          <div class="card text-center mt-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Запись</h5>
+              <input class="btn btn-primary"  name="date" value="15-05-23 06:00" type="submit">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-  </header><!-- End Header -->
-	<div class="container" style="margin-top:150px; background-color:#f1f7fd;">
-	<div class="section-title">
-	<h2>Check available appointments </h2>
-	<h3 style="color: #2c4964;">Welcome to Doctor :<c:out value="${appointment.getDoctor().getName()}"/> clinic </h3>
 
-	</div>	
-		<c:out value="${success}"/>
-		
-		<form:form action="/edit/${appointment.getId()}" method="put" modelAttribute="appiontment">
-			<div class="container text-center mt-5">
-  				<div class="row">
-   					 <div class="col">
-			<div class="card text-center" style="width: 18rem;">
-			  <div class="card-body">
-			    <h5 class="card-title">2022-03-04 12:00</h5>
-			    <input class="btn btn-primary" name="date" value="2022-03-04 12:00" type="submit">
-			  </div>
-			</div>
-			
-			<div class="card text-center mt-4" style="width: 18rem;">
-			  <div class="card-body">
-			    <h5 class="card-title">2022-03-04 10:00</h5>
-			    <input class="btn btn-primary" name="date" value="2022-03-04 10:00" type="submit">
-			  </div>
-			</div>
-			</div>
-			<div class="col">
-			<div class="card text-center" style="width: 18rem;">
-			  <div class="card-body">
-			    <h5 class="card-title">2022-03-04 09:00</h5>
-			    <input class="btn btn-primary" name="date" value="2022-03-04 08:00" type="submit">
-			  </div>
-			</div>
-			
-			<div class="card text-center mt-4" style="width: 18rem;">
-			  <div class="card-body">
-			    <h5 class="card-title">2022-03-04 09:00</h5>
-			    <input class="btn btn-primary" name="date" value="2022-03-04 09:00" type="submit">
-			  </div>
-			</div>
-			</div>
-			<div class="col">
-			<div class="card text-center" style="width: 18rem;">
-			  <div class="card-body">
-			    <h5 class="card-title">2022-03-04 09:00</h5>
-			    <input class="btn btn-primary" name="date" value="2022-03-04 07:00" type="submit">
-			  </div>
-			</div>
-			<div class="card text-center mt-4" style="width: 18rem;">
-			  <div class="card-body">
-			    <h5 class="card-title">2022-03-04 09:00</h5>
-			    <input class="btn btn-primary"  name="date" value="2022-03-04 06:00" type="submit">
-			  </div>
-			  </div>
-			</div>
-			</div>
-			</div>
-			
-				
-			</form:form>
-			</div>
-			
-			
-	<!-- JavaScript Bundle with Popper -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-		crossorigin="anonymous"></script>
+  </form:form>
+</div>
+
+<!-- JavaScript Bundle with Popper -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

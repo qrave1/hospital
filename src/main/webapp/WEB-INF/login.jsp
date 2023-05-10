@@ -42,65 +42,65 @@
      <section id="appointment" class="appointment section-bg">
       <div class="container">
         <div class="section-title">
-          <h2>Medilab</h2>
+          <h2>Здоровье++</h2>
         </div>
   	<div class= "row">
  	<div class="col m-5">
-  	<h1>Register</h1>
+  	<h1>Регистрация</h1>
 	<form:form action="/register" method="post" modelAttribute="newUser" class="php-email-form">
     <p>
-        <form:label path="username">username :</form:label><br>
+        <form:label path="username">Имя:</form:label><br>
         <form:input path="username" class="form-control"/><br>
         <form:errors path="username" class="danger"/>
     </p> 
     <p>
-        <form:label path="email">email :</form:label><br>
+        <form:label path="email">Email:</form:label><br>
         <form:input path="email" class="form-control"/><br>
         <form:errors path="email" class="danger"/>
     </p>
        <p>
-        <form:label path="age">age :</form:label><br>
+        <form:label path="age">Возраст:</form:label><br>
         <form:input path="age" class="form-control"/><br>
         <form:errors path="age" class="danger"/>
     </p>
      <p>
-        <form:label path="phone">phone :</form:label><br>
+        <form:label path="phone">Номер телефона:</form:label><br>
         <form:input path="phone" class="form-control"/><br>
         <form:errors path="phone" class="danger"/>
     </p>
     
        <p>
-        <form:label path="password" type="password">password :</form:label><br> 
+        <form:label path="password" type="password">Пароль:</form:label><br>
         <form:input path="password" type="password" class="form-control"/><br>
         <form:errors path="password" class="danger"/>
     </p>
       
     <p>
-        <form:label path="confPassword" type="password">confpassword :</form:label><br>
+        <form:label path="confPassword" type="password">Подтверждение пароля:</form:label><br>
         <form:input path="confPassword" type="password" class="form-control"/><br>
         <form:errors path="confPassword" class="danger"/>
     </p>
       
-    <button class="btn btn-primary" type="submit">Register</button>
+    <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
     
 </form:form>
 </div> 
 	<div class="col m-5">
-	<h1>LogIn</h1>
+	<h1>Вход</h1>
 <form:form action="/login" method="post" modelAttribute="userLogin" class="php-email-form">
 
     <p>
-        <form:label path="email" >email:</form:label><br>
+        <form:label path="email" >Email:</form:label><br>
         <form:input path="email" class="form-control"/><br>
         <form:errors path="email" />
     </p>
        <p>
-        <form:label path="password" type="password" >password :</form:label><br> 
+        <form:label path="password" type="password" >Пароль:</form:label><br>
         <form:input path="password" type="password" class="form-control"/><br>
         <form:errors path="password" />
     </p>
       
-    <button class="btn btn-primary" type="submit">Login</button>
+    <button class="btn btn-primary" type="submit">Войти</button>
     
     
 </form:form>

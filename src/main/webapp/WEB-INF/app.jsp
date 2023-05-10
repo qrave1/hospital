@@ -44,7 +44,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Здоровье++</a></h1>
+      <h1 class="logo me-auto"><a href="/">Здоровье++</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -54,11 +54,11 @@
           <li><a class="nav-link scrollto" href="/userAppo">Записи</a></li>
           <c:choose>
 		    <c:when test="${sessionScope.user_id != null}">
-	          <li><a class="nav-link scrollto" href="/logout">Log Out</a></li>
+	          <li><a class="nav-link scrollto" href="/logout">Выйти</a></li>
 		        
 		    </c:when>
 		    <c:otherwise>
-	          <li><a class="nav-link scrollto" href="/index">Log In</a></li>
+	          <li><a class="nav-link scrollto" href="/index">Войти</a></li>
 		    </c:otherwise>
 		</c:choose>
           
@@ -74,7 +74,7 @@
   </header><!-- End Header -->
 	<div class="container " style="margin-top:150px; background-color:#f1f7fd;">
         <div class="section-title">
-          <h2 class="m-5">Make an Appointment</h2>
+          <h2 class="m-5">Запись к врачу</h2>
         </div>
         <form action="/index" method="post"   modelAttribute="appointment">
           <div class="row">
@@ -95,9 +95,9 @@
           </div>
             <div class="col-md-4 form-group mt-3">
               <select name=doctor id="department" class="form-select">
-              <option>--select Doctor--</option>
+              <option>Врач</option>
             <c:forEach  items="${allDoctor}" var="i">
-                 <option value ="${i.id}">  doctor - <c:out value = "${i.name}"/> department -
+                 <option value ="${i.id}">  Врач - <c:out value = "${i.name}"/> Специальность -
 			    		 <c:out value = "${i.type}"/>
 			     </option>
              </c:forEach>
@@ -107,11 +107,11 @@
        
 			<div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="descrition" rows="5" placeholder="Message (Optional)"></textarea>
+            <textarea class="form-control" name="descrition" rows="5" placeholder="Жалобы"></textarea>
             <div class="validate"></div>
           </div>
           </div>
-          <div class="text-center"><button type="submit" class="btn btn-primary m-3">Make an Appointment</button></div>
+          <div class="text-center"><button type="submit" class="btn btn-primary m-3">Записаться</button></div>
         </form>
       </div>
       

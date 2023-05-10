@@ -3,13 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Medilab</title>
+  <title>Здоровье++</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   
   <meta content="" name="description">
@@ -42,40 +42,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top">
+		<div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Medilab</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+			<h1 class="logo me-auto"><a href="/">Здоровье++</a></h1>
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
-          <li><a class="nav-link scrollto" href="/userAppo">Appoiments</a></li>
-          <c:choose>
-		    <c:when test="${sessionScope.user_id != null}">
-	          <li><a class="nav-link scrollto" href="/logout">LogOut</a></li>
-		        
-		    </c:when>
-		    <c:otherwise>
-	          <li><a class="nav-link scrollto" href="/index">LogIn</a></li>
-		    </c:otherwise>
-		</c:choose>
-          
-          <li></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+			<nav id="navbar" class="navbar order-last order-lg-0">
+				<ul>
+					<li><a class="nav-link scrollto active" href="/">Главная</a></li>
+					<li><a class="nav-link scrollto" href="/userAppo">Записи</a></li>
+					<c:choose>
+						<c:when test="${sessionScope.user_id != null}">
+							<li><a class="nav-link scrollto" href="/logout">Выйти</a></li>
 
-      <a href="/index" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+						</c:when>
+						<c:otherwise>
+							<li><a class="nav-link scrollto" href="/index">Войти</a></li>
+						</c:otherwise>
+					</c:choose>
 
-    </div>
-    
-  </header><!-- End Header -->
+					<li></li>
+				</ul>
+				<i class="bi bi-list mobile-nav-toggle"></i>
+			</nav><!-- .navbar -->
+
+			<a href="/index" class="appointment-btn scrollto"><span class="d-none d-md-inline">Записаться</span></a>
+
+		</div>
+
+	</header><!-- End Header -->
   
   
   <!-- content -->
@@ -87,10 +85,10 @@
     <thead class="thead-inverse">
 			<tr>
 				<th>ID</th>
-				<th>Appointemnt date</th>
-				<th>Doctor name</th>
-				<th>patient</th>
-				<th>Actions</th>
+				<th>Дата записи</th>
+				<th>Имя врача</th>
+				<th>Пациент</th>
+				<th>Действия</th>
 			</tr>
 			 </thead>
        		 <tbody>
@@ -99,12 +97,11 @@
 				<c:when test="${v.user.getId() == userid.id}">
 
 			<tr>
-
 				<td scope="row"><c:out value="${v.id}" /></td>
 				<td scope="row"><c:out value="${v.date}" /></td>
 				<td scope="row"><c:out value="${v.doctor.name}" /></td>
 				<td scope="row"><c:out value="${v.user.username}" /></td>
-				<td scope="row"><a href="/edit/${v.id}">Edit</a> | <a href="/delete/${v.id}">Delete</a></td>
+				<td scope="row"><a href="/delete/${v.id}">Удалить</a></td>
 			</tr>
 					
 				</c:when>
