@@ -12,5 +12,4 @@ import com.codingdojo.mvc.model.Doctor;
 @Repository
 public interface DoctorRepository extends CrudRepository<Doctor, Long>{
 	List<Doctor> findAll();
-//	@Query(value="SELECT count(*) from doctors", nativeQuery=true)
 }

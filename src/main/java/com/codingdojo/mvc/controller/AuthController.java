@@ -1,9 +1,6 @@
 package com.codingdojo.mvc.controller;
 
 
-
-
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -99,8 +96,6 @@ public class AuthController {
 		    }
 		    return "redirect:/"; 
 		}
-	
-	
 }
 	
 				

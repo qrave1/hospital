@@ -22,37 +22,4 @@ public class DoctorService {
 	public List<Doctor> getAllDoctor(){
 		return doctorRepo.findAll();
 	}
-	
-	
-	 //get Doctor by id 
-    public Doctor getDoctorById(Long id) {
-    	Optional<Doctor> optionalDoctor = doctorRepo.findById(id);
- 			if(optionalDoctor.isPresent()) {
- 				return optionalDoctor.get();
- 			}else {
- 				return null;
- 		}
-    }
-    
- // retrieves a Doctor 
-    public Doctor findDoctor(Long id) {
-       Optional<Doctor> optional = doctorRepo.findById(id);
-        if(optional.isPresent()) {
-           return optional.get();
-        } else {
-            return null;
-        }
-    }
-    
-//count the num of all doctors
-//    public List<Doctor> count(){
-//    	return doctorRepo.CountDoctor();
-//    }
-
-	public void checkAppoint( Doctor doctor) {
-		Doctor chosenDoc = doctor;
-		
-		
-	}
-
 }

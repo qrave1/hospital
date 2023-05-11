@@ -37,11 +37,7 @@ public class MainController {
 
 	@Autowired
 	UserService userService;
-	
-//	@RequestMapping("/index")
-//	public String index() {
-//		return"test.jsp";
-//	}
+
 	@GetMapping("/")
 	public String home() {
 	
@@ -55,25 +51,11 @@ public class MainController {
 		Long id= (Long) session.getAttribute("user_id");
 		User user =userService.findUser(id);
 		model.addAttribute("user", user);
-		
-		
 		List<Doctor> allDoctor = doctorService.getAllDoctor();
 		model.addAttribute("allDoctor", allDoctor);
-		
-//		List<Doctor> countDoctors=doctorService.count();
-//		model.addAttribute("countDoctors",countDoctors);
 		model.addAttribute("doctors", doctorService.getAllDoctor());
-
 		List<Appointment> all = appointmentService.getAllAppointment();
 		model.addAttribute("all", all);
-//		if(user.getType().equals("User")) {
-//			return"app.jsp";
-//			
-//		}
-//		else if (doctor.getType().equals("Doctor")) {
-//			System.out.println(doctor.getType());
-//			return "doctors.jsp";
-//		}
 		return"app.jsp";
 	}
 
@@ -82,15 +64,14 @@ public class MainController {
 		if (session.getAttribute("user_id")==null) {
 			return "redirect:/reg";
 		}
-//			System.out.println(doctor.getName());
+
 			model.addAttribute("user", userService.findUser((Long) session.getAttribute("user_id")));
-//			doctorService.getDoctorById(doctor.getId());
+
 			appointmentService.createAppointment(appointment);
 
-			//here where i started edit
-			//model.addAttribute(doctorService.count();
+
 			return String.format("redirect:/check/%s", appointment.getId());
-//			
+
 	}
 	
 	
@@ -105,13 +86,10 @@ public class MainController {
 		}
 		
 			Appointment appo = appointmentService.findAppointment(appoId);
-//			redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.timee", result);
+
 
 			model.addAttribute("appo", appo);
-//			appointmentService.updateAppointment(appo.getId(), null);
-			
-			
-	      	//appointmentService.createAppointment(appointment);
+
 	          return "check.jsp";
 	      
 	  }
@@ -134,7 +112,7 @@ public class MainController {
     	appointmentService.updateAppointment(id, timee);                   // update(id ,book);
     	redirectAttributes.addFlashAttribute("success" ,"appointment has been creaated");
     	return "redirect:/userAppo";
-//    	return String.format("redirect:/check/%s", id);
+
     }
 	
 	
@@ -154,12 +132,7 @@ public class MainController {
 		return"user.jsp";
 	}
 
-	
-//	@RequestMapping("/doctors")
-//	public String showdoctors(Model model) {
-//		model.addAttribute("doctors", doctorService.getAllDoctor());
-//		return "doctors.jsp";
-//	}
+
 	@GetMapping("/edit/{id}")
 	public String edit(Model model,@PathVariable("id")Long id,HttpSession session) {
 		if(session.getAttribute("user_id")== null) {
