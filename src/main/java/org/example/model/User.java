@@ -57,22 +57,9 @@ public class User {
 		this.id = id;
 	}
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
 
 	@OneToMany(mappedBy = "user")
 	private List<Appointment> appointments;
-	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date createdAt;
-	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date updatedAt;
 
 	public String getUsername() {
 		return username;
@@ -134,17 +121,4 @@ public class User {
 	public Long getId() {
 		return id;
 	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	
-	
-	
-
 }

@@ -33,12 +33,6 @@ public class Appointment {
     @JoinColumn(name = "doctor_id", nullable = false)
     private Doctor doctor;
 
-    // This will not allow the createdAt column to be updated after creation
-    @Column(updatable = false)
-    @DateTimeFormat(pattern = "dd-MM-yy")
-    private Date createdAt;
-    @DateTimeFormat(pattern = "dd-MM-yy")
-    private Date updatedAt;
 
 
     //constructor
@@ -80,18 +74,5 @@ public class Appointment {
     public Long getId() {
         return id;
     }
-
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    //getter
-
 
 }
